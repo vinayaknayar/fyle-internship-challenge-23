@@ -15,7 +15,7 @@ export class LandingComponent implements OnInit {
   repos: { [key: string]: any } = {};
   repoKeys: string[] = [];
   totalrepoKeys: string[] = [];
-  pageNumbers: number[] = Array.from({ length: 9 }, (_, i) => i + 1); 
+  pageNumbers: number[] = Array.from({ length: 10 }, (_, i) => i + 1); 
   
   constructor(private apiService: ApiService) { }
 
@@ -35,7 +35,7 @@ export class LandingComponent implements OnInit {
   }
 
   currentPage: number = 0;
-  itemsPerPage: number = 6;
+  itemsPerPage: number = 10;
 
 
   goToPage(pageNumber: number) {
