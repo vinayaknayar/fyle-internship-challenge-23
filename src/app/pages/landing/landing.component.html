@@ -13,7 +13,12 @@
 				again.</h2>
 		</div>
 	</div>
-	<div class="border-2 rounded-md p-4 flex-1 min-h-[90%] overflow-y-auto" *ngIf="!isLoading && !error">
+	<div class="border-2 rounded-md flex-1" *ngIf="start">
+		<div class="flex flex-col justify-center items-center h-full">
+			<h2 class="text-blue-500 text-2xl font-semibold mt-4">Enter a valid github username.</h2>
+		</div>
+	</div>
+	<div class="border-2 rounded-md p-4 flex-1 min-h-[90%] overflow-y-auto" *ngIf="!isLoading && !error && !start">
 		<app-header [userdetails]="userdetails"></app-header>
 		<div class="flex gap-4 flex-wrap justify-center">
 			<div *ngFor="let key of repoKeys">
@@ -22,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="mt-4 flex justify-center space-x-2" *ngIf="!isLoading && !error">
+	<div class="mt-4 flex justify-center space-x-2" *ngIf="!isLoading && !error && !start">
 		<button class="py-2 px-3 rounded-lg bg-blue-500 text-white font-semibold disabled:opacity-50"
 			(click)="previousPage()" [disabled]="currentPage === 0">
 			←

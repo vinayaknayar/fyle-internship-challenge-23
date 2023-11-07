@@ -11,6 +11,7 @@ export class LandingComponent implements OnInit {
   userdetails: object = {};
   isLoading: boolean = true;
   error: boolean = false;
+  start: boolean = false;
   repos: { [key: string]: any } = {};
   repoKeys: string[] = [];
   totalrepoKeys: string[] = [];
@@ -26,7 +27,11 @@ export class LandingComponent implements OnInit {
       this.username = storedUsername;
       this.fetchUserData(this.username);
       this.fetchUserRepos(this.username);
+    } else {
+      this.isLoading = false;
+      this.start = true;
     }
+      
   }
 
   currentPage: number = 0;
@@ -73,6 +78,7 @@ export class LandingComponent implements OnInit {
   submit() {
     localStorage.setItem('username', this.username);
 
+    this.start = false
     this.fetchUserData(this.username);
     this.fetchUserRepos(this.username);
   }
