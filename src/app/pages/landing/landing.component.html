@@ -1,4 +1,4 @@
-<div class="mx-auto py-4 max-w-272 h-screen flex flex-col">
+<div class="mx-auto py-2 sm:py-4 max-w-[100vw] sm:max-w-272  min-w-84 h-screen flex flex-col">
 	<div class="flex gap-4 p-2 mb-1 border-2 rounded-md">
 		<input type="text" class="grow h-12 border-2 border-gray-300 rounded-md p-2"
 			placeholder="Enter GitHub Username..." [(ngModel)]="username" (keyup.enter)="submit()" />
@@ -18,7 +18,7 @@
 			<h2 class="text-blue-500 text-2xl font-semibold mt-4">Enter a valid github username.</h2>
 		</div>
 	</div>
-	<div class="border-2 rounded-md p-4 flex-1 min-h-[90%] overflow-y-auto" *ngIf="!isLoading && !error && !start">
+	<div class="border-2 rounded-md p-4 flex-1 min-h-[80%] overflow-y-auto" *ngIf="!isLoading && !error && !start">
 		<app-header [userdetails]="userdetails"></app-header>
 		<div class="flex gap-4 flex-wrap justify-center">
 			<div *ngFor="let key of repoKeys">
